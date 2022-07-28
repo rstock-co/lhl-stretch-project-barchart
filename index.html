@@ -4,8 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Bar Chart Demo Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/events.js"></script>
+    <script type="module" src="js/init.js"></script>
 
-    <script src="js/app.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -13,8 +17,13 @@
     <header>
       <h1>Bar Chart Demo Page</h1>
     </header>
-    <section>
-      <p>This is a boilerplate paragraph.</p>
+    <section class="value-input">
+      <h3>Add Values</h3>
+      <p>Please enter a value to add to the bar chart.</p>
+      <div class="input-wrapper">
+        <input name="value" type="number" placeholder="value" />
+        <input class="value-add" type="button" value="Add" />
+      </div>
     </section>
   </body>
 </html>

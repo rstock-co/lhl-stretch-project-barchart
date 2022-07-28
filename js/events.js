@@ -11,11 +11,13 @@ export const handleAdd = () => {
   Chart.taskAdd = () => {
 
     $(".value-input .value-add").on("click", function () {
-      console.log("executed");
+      console.log("add event handler triggered")
 
       let newValue = $('.value-input input[name="newValue"]').val();
       Chart.add(Number(newValue));
+      Chart.displayValues();
       console.log(Chart.values);
+    
     });
   };
 };
@@ -32,6 +34,7 @@ export const handleRemove = () => {
       console.log("remove event handler triggered")
       let removeValue = $('.value-removal input[name="removeValue"]').val();
       Chart.remove(Number(removeValue));
+      Chart.displayValues();
       console.log(Chart.values);
     });
     

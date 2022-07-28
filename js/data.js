@@ -15,5 +15,8 @@ const Chart = {
     chartTitleFontSize: 16,     // needs to set and shown dynamically, and customizable
     chartTitleFontColor: 'blue' // needs to set and shown dynamically, and customizable 
   },
-  element: 'element goes here' // the DOM or jQuery element where the chart will be rendered into
+  element: 'element goes here',
+   // the DOM or jQuery element where the chart will be rendered into
 }
+
+export default Chart;

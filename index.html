@@ -10,7 +10,6 @@
     <script type="module" src="js/events.js"></script>
     <script type="module" src="js/init.js"></script>
 
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -23,6 +22,18 @@
       <div class="input-wrapper">
         <input name="newValue" type="number" placeholder="Value" />
         <input class="value-add" type="button" value="Add" />
+      </div>
+    </section>
+    <section class="value-display">
+      <h3>Current List of Values</h3>
+      <ul class="value-list"></ul>
+    </section>
+    <section class="value-removal">
+      <h3>Remove Values</h3>
+      <p>Please enter the index of the value to remove from the bar chart.</p>
+      <div class="input-wrapper">
+        <input name="removeValue" type="number" placeholder="Index" />
+        <input class="value-remove" type="button" value="Remove" />
       </div>
     </section>
   </body>

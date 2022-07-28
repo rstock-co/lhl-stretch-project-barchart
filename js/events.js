@@ -10,21 +10,30 @@ export const handleAdd = () => {
   // Handle value addition
   Chart.taskAdd = () => {
 
-    $('.value-input .value-add').on('click', function() {
+    $(".value-input .value-add").on("click", function () {
+      console.log("executed");
+
       let newValue = $('.value-input input[name="newValue"]').val();
       Chart.add(Number(newValue));
-      console.log(Chart.values)
-    });
-  /*
-    $('.value-input .value-add').on('click', function () {
-      console.log('b')
-      let newValue = $('.value-input input[name="newValue"]').val();
-      console.log(newValue)
-      console.log(Chart.values);
-      Chart.add(newValue);
       console.log(Chart.values);
     });
   };
-  */
 };
-}
+
+export const handleRemove = () => {
+  Chart.remove = (id) => {
+    Chart.values.splice(id, 1);
+  };
+
+  // Handle value removal
+  Chart.taskRemove = () => {
+    
+    $(".value-removal .value-remove").on("click", function () {
+      console.log("remove event handler triggered")
+      let removeValue = $('.value-removal input[name="removeValue"]').val();
+      Chart.remove(Number(removeValue));
+      console.log(Chart.values);
+    });
+    
+  };
+};

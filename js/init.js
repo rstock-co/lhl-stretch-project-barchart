@@ -14,8 +14,7 @@ export const init = () => {
 const initializeEventHandlers = () => {
   handleAdd();
   handleRemove();
-  Chart.taskAdd(66);
-  Chart.taskRemove(2);
+
   console.log(Chart.values)
 
 };

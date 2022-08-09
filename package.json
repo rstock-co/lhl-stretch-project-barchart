@@ -2,6 +2,10 @@
   "name": "lhl-stretch-project-barchart",
   "version": "1.0.0",
   "description": "Stretch project for the prep portion of Web Development bootcamp",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-lighthouselabs": "lighthouse-labs/eslint-config-lighthouselabs"
+  },
   "main": "app.js",
   "type": "module",
     

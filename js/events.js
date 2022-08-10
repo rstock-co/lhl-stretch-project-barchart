@@ -8,19 +8,16 @@ export const handleAdd = () => {
   };
 
   // Handle value addition
-  Chart.taskAdd = () => {
-
-    $(".value-input .value-add").on("click", function () {
-      console.log("add event handler triggered")
+    $(document).on("click",".value-input .value-add", function () {
+      console.log("add event handler")
 
       let newValue = $('.value-input input[name="newValue"]').val();
       Chart.add(Number(newValue));
       Chart.displayValues();
       console.log(Chart.values);
-    
+
     });
   };
-};
 
 export const handleRemove = () => {
   Chart.remove = (id) => {
@@ -28,8 +25,6 @@ export const handleRemove = () => {
   };
 
   // Handle value removal
-  Chart.taskRemove = () => {
-    
     $(".value-removal .value-remove").on("click", function () {
       console.log("remove event handler triggered")
       let removeValue = $('.value-removal input[name="removeValue"]').val();
@@ -37,6 +32,5 @@ export const handleRemove = () => {
       Chart.displayValues();
       console.log(Chart.values);
     });
-    
+
   };
-};

@@ -1,6 +1,7 @@
 // This module defines the DOM event handlers
 
 import Chart from "./data.js";
+import { displayChart, displayValues } from "./view.js";
 
 export const handleAdd = () => {
   Chart.add = (value) => {
@@ -13,7 +14,8 @@ export const handleAdd = () => {
 
       let newValue = $('.value-input input[name="newValue"]').val();
       Chart.add(Number(newValue));
-      Chart.displayValues();
+      displayValues();
+      displayChart();
       console.log(Chart.values);
 
     });
@@ -29,7 +31,8 @@ export const handleRemove = () => {
       console.log("remove event handler triggered")
       let removeValue = $('.value-removal input[name="removeValue"]').val();
       Chart.remove(Number(removeValue));
-      Chart.displayValues();
+      displayValues();
+      displayChart();
       console.log(Chart.values);
     });
 

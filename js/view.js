@@ -27,18 +27,24 @@ export const displayChart = () => {
   // dynamic CSS variables
   let position = Chart.options.valuesPosition;
   let spacing = Chart.options.barSpacing;
+  let barColor = Chart.options.barColor;
+  let valueColor = Chart.options.labelColor;
   let maxValue = Math.max(...Chart.values);
 
   // build chart bar list html
   Chart.values.map((value, index) => {
     let calc = maxValue - value + 1;
-    htmlBars += `<li style="grid-row: ${maxValue} / ${calc}; grid-column: ${index + 1}; justify-content: ${position};">
+    htmlBars += `<li style="grid-row: ${maxValue} / ${calc};
+    grid-column: ${index + 1};
+    justify-content: ${position};
+    background: ${barColor};
+    color: ${valueColor}">
     ${value}
     </li>`;
   });
 
   htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;"> ${htmlBars} </ul>`
 
-  // Update the value list DOM element
+  // Update the chart display DOM element
   $(".chart").append(htmlChart);
 };

@@ -8,7 +8,7 @@ const Chart = {
     valuesPosition: 'top',      // can be top, bottom, or middle of the bar
     barWidth: 100,              // needs to be calculated based on total amount of values
     barHeight: 900,             // needs to be calculated based on the values themselves
-    barColor: 'red',            // needs to be customizable (also for each label if stacked bar chart)
+    barColor: '#ffd100',            // needs to be customizable (also for each label if stacked bar chart)
     labelColor: 'black',        // needs to be customizable (also for each label if stacked bar chart)
     barSpacing: 0.5,             // needs to be customizable
     yAxisSpacing: 10,           // needs to be either customizable or calculated based on the values themselves

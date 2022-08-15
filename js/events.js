@@ -33,31 +33,34 @@ export const handleRemove = () => {
 };
 
 export const changePosition = () => {
-  Chart.position = (position) => {
-    Chart.options.valuesPosition = position;
-  };
-
-  // Handle position change
   $(".values-position .select-position").on("click", function () {
-    let positionValue = $('.values-position select[name="valuePosition"]').val();
-    Chart.position(positionValue);
-    displayValues();
+    let position = $('.values-position select[name="valuePosition"]').val();
+    Chart.options.valuesPosition = position;
     displayChart();
-    console.log(Chart.options.valuesPosition)
   });
 };
 
 export const changeSpacing = () => {
-  Chart.spacing = (spacing) => {
-    Chart.options.barSpacing = spacing;
-  };
-
-  // Handle spacing change
   $(".bar-spacing .select-spacing").on("click", function () {
-    let barSpacing = $('.bar-spacing select[name="barSpacing"]').val();
-    Chart.spacing(barSpacing);
-    displayValues();
+    let spacing = $('.bar-spacing select[name="barSpacing"]').val();
+    Chart.options.barSpacing = spacing;
     displayChart();
-    console.log(Chart.options.barSpacing)
   });
 };
+
+export const changeBarColor = () => {
+  $(".bar-color .change-bar-color").on("click", function () {
+    let barColor = $('.bar-color input[name="barColor"]').val();
+    Chart.options.barColor = barColor;
+    displayChart();
+  });
+};
+
+export const changeValueColor = () => {
+  $(".value-color .change-value-color").on("click", function () {
+    let valueColor = $('.value-color input[name="valueColor"]').val();
+    Chart.options.labelColor = valueColor;
+    displayChart();
+  });
+};
+

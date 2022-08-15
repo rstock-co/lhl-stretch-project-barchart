@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Silkscreen"
+    />
 
     <title>Bar Chart Demo Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -18,8 +21,7 @@
     <header>
       <h1>Bar Chart Demo Page</h1>
     </header>
-    <br />
-    <h2>DATA</h2>
+    <h2>CHART DATA</h2>
 
     <section class="value-input">
       <h4>Add Values</h4>
@@ -46,24 +48,26 @@
 
     <br />
     <br />
-    <br />
 
-    <h2>OPTIONS</h2>
+    <h2>CHART OPTIONS</h2>
 
-    <section class="values-position">
-      <h4>Position Values</h4>
-      <p>Select the position of the values inside the bar:</p>
+    <section class="labels-position">
+      <h4>Positioning</h4>
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 575px">
+      <p>Select the position of the labels inside the bar:</p>
       <div class="select-position">
-        <select name="valuePosition">
+        <select name="labelPosition">
           <option value="flex-end">Top</option>
           <option value="center">Middle</option>
           <option value="flex-start">Bottom</option>
         </select>
       </div>
+    </div>
     </section>
 
     <section class="bar-spacing">
-      <h4>Change Bar Spacing</h4>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 525px">
       <p>Select the amount of space between the bars:</p>
       <div class="select-spacing">
         <select name="barSpacing">
@@ -74,27 +78,39 @@
           <option value="4">4</option>
         </select>
       </div>
+    </div>
     </section>
 
-    <section class="bar-color">
-      <h4>Change Bar Color</h4>
-      <p>Enter the bar color:</p>
-      <div class="input-bar-color">
-        <input name="barColor" type="string" placeholder="bar color" />
-        <input class="change-bar-color" type="button" value="Change" />
+    <h4>Colors</h4>
+    <section class="colors">
+      <p>Enter the chart colors:</p>
+      <div style="display: flex; justify-content: space-between; width: 550px">
+        <div class="input-bar-color">
+          <input name="barColor" type="string" placeholder="bar color" />
+          <input class="change-bar-color" type="button" value="Change" />
+        </div>
+        <div class="input-label-color">
+          <input name="labelColor" type="string" placeholder="label color" />
+          <input class="change-label-color" type="button" value="Change" />
+        </div>
       </div>
     </section>
 
-    <section class="value-color">
-      <h4>Change Value Color</h4>
-      <p>Enter the value color:</p>
-      <div class="input-value-color">
-        <input name="valueColor" type="string" placeholder="value color" />
-        <input class="change-value-color" type="button" value="Change" />
+    <h4>Chart Size</h4>
+    <section class="chart-size">
+      <p>Enter the chart size (in pixels):</p>
+      <div style="display: flex; justify-content: space-between; width: 550px">
+        <div class="chart-height">
+          <input name="chartHeight" type="string" placeholder="height" />
+          <input class="change-chart-height" type="button" value="Change" />
+        </div>
+        <div class="chart-width">
+          <input name="chartWidth" type="string" placeholder="width" />
+          <input class="change-chart-width" type="button" value="Change" />
+        </div>
       </div>
     </section>
 
-    <br />
     <br />
     <br />
 

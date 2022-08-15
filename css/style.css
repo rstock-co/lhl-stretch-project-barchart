@@ -12,10 +12,6 @@ body {
   grid-auto-rows: 1fr;
   grid-auto-columns: 1fr;
   min-height: 12rem;
-  border: 2px solid #a7a8aa;
-  border-radius: 0.5rem;
-  height: 500px;
-  width: 500px;
 }
 
 .chart li {
@@ -26,6 +22,7 @@ body {
   padding: 0.5rem 0.25rem;
   border-radius: 50% 50% 0 0 / 10px 10px 0 0;
   font-weight: bold;
+  font-size: x-large;
 }
 
 h2 {

@@ -25,10 +25,13 @@ export const displayChart = () => {
   let htmlChart = '';
 
   // dynamic CSS variables
-  let position = Chart.options.valuesPosition;
+  let position = Chart.options.labelsPosition;
   let spacing = Chart.options.barSpacing;
   let barColor = Chart.options.barColor;
-  let valueColor = Chart.options.labelColor;
+  let labelColor = Chart.options.labelColor;
+  let height = Chart.options.chartHeight;
+  let width = Chart.options.chartWidth;
+
   let maxValue = Math.max(...Chart.values);
 
   // build chart bar list html
@@ -38,12 +41,16 @@ export const displayChart = () => {
     grid-column: ${index + 1};
     justify-content: ${position};
     background: ${barColor};
-    color: ${valueColor}">
+    color: ${labelColor}">
     ${value}
     </li>`;
   });
 
-  htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;"> ${htmlBars} </ul>`
+  htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;
+  height: ${height}px;
+  width: ${width}px;">
+  ${htmlBars}
+  </ul>`
 
   // Update the chart display DOM element
   $(".chart").append(htmlChart);

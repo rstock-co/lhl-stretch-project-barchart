@@ -10,8 +10,6 @@ export const handleAdd = () => {
 
   // Handle value addition
   $(document).on("click", ".value-input .value-add", function () {
-    console.log("add event handler");
-
     let newValue = $('.value-input input[name="newValue"]').val();
     Chart.add(Number(newValue));
     displayValues();
@@ -27,7 +25,6 @@ export const handleRemove = () => {
 
   // Handle value removal
   $(".value-removal .value-remove").on("click", function () {
-    console.log("remove event handler triggered");
     let removeValue = $('.value-removal input[name="removeValue"]').val();
     Chart.remove(Number(removeValue));
     displayValues();
@@ -41,11 +38,26 @@ export const changePosition = () => {
   };
 
   // Handle position change
-  $(".values-position .select-wrapper").on("click", function () {
-    console.log("change position handler triggered");
+  $(".values-position .select-position").on("click", function () {
     let positionValue = $('.values-position select[name="valuePosition"]').val();
     Chart.position(positionValue);
     displayValues();
     displayChart();
+    console.log(Chart.options.valuesPosition)
+  });
+};
+
+export const changeSpacing = () => {
+  Chart.spacing = (spacing) => {
+    Chart.options.barSpacing = spacing;
+  };
+
+  // Handle spacing change
+  $(".bar-spacing .select-spacing").on("click", function () {
+    let barSpacing = $('.bar-spacing select[name="barSpacing"]').val();
+    Chart.spacing(barSpacing);
+    displayValues();
+    displayChart();
+    console.log(Chart.options.barSpacing)
   });
 };

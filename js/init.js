@@ -1,6 +1,6 @@
 // This module initializes the app to be ready to handle DOM events
 
-import { handleAdd, handleRemove, changePosition } from "./events.js";
+import { handleAdd, handleRemove, changePosition, changeSpacing } from "./events.js";
 import { displayValues, displayChart } from "./view.js";
 
 export const init = () => {
@@ -14,4 +14,5 @@ const initializeEventHandlers = () => {
   handleAdd();
   handleRemove();
   changePosition();
+  changeSpacing();
 };

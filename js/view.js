@@ -18,21 +18,27 @@ export const displayValues = () => {
 };
 
 export const displayChart = () => {
-  $(".chart .chart-display").html("");
+  $(".chart").html("");
 
   // reset html prior to mapping
-  let htmlChart = "";
-  let maxValue = Math.max(...Chart.values);
+  let htmlBars = '';
+  let htmlChart = '';
+
+  // dynamic CSS variables
   let position = Chart.options.valuesPosition;
+  let spacing = Chart.options.barSpacing;
+  let maxValue = Math.max(...Chart.values);
 
   // build chart bar list html
   Chart.values.map((value, index) => {
     let calc = maxValue - value + 1;
-    htmlChart += `<li style="grid-row: ${maxValue} / ${calc}; grid-column: ${index + 1}; justify-content: ${position};">
+    htmlBars += `<li style="grid-row: ${maxValue} / ${calc}; grid-column: ${index + 1}; justify-content: ${position};">
     ${value}
     </li>`;
   });
 
+  htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;"> ${htmlBars} </ul>`
+
   // Update the value list DOM element
-  $(".chart .chart-display").append(htmlChart);
+  $(".chart").append(htmlChart);
 };

@@ -17,8 +17,10 @@
     <header>
       <h1>Bar Chart Demo Page</h1>
     </header>
+    <br>
+    <h2>DATA</h2>
     <section class="value-input">
-      <h3>Add Values</h3>
+      <h4>Add Values</h4>
       <p>Please enter a value to add to the bar chart.</p>
       <div class="input-wrapper">
         <input name="newValue" type="number" placeholder="Value" />
@@ -26,21 +28,25 @@
       </div>
     </section>
     <section class="value-display">
-      <h3>Current List of Values</h3>
+      <h4>Current List of Values</h4>
       <ul class="value-list"></ul>
     </section>
     <section class="value-removal">
-      <h3>Remove Values</h3>
+      <h4>Remove Values</h4>
       <p>Please enter the index of the value to remove from the bar chart.</p>
       <div class="input-wrapper">
         <input name="removeValue" type="number" placeholder="Index" />
         <input class="value-remove" type="button" value="Remove" />
       </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <h2>OPTIONS</h2>
     <section class="values-position">
-      <h3>Position Values</h3>
+      <h4>Position Values</h4>
       <p>Please select the position of the values inside the bar:</p>
-      <div class="select-wrapper">
+      <div class="select-position">
         <select name="valuePosition">
           <option value="flex-end">Top</option>
           <option value="center">Middle</option>
@@ -48,9 +54,24 @@
         </select>
       </div>
     </section>
+    <section class="bar-spacing">
+      <h4>Change Bar Spacing</h4>
+      <p>Please enter the amount of space between the bars:</p>
+      <div class="select-spacing">
+        <select name="barSpacing">
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
     <section class="chart">
-      <h2>Bar Chart</h2>
-      <ul class="chart-display"></ul>
+      <h2>CHART DISPLAY</h2>
     </section>
   </body>
 </html>

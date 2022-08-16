@@ -12,6 +12,8 @@ body {
   grid-auto-rows: 1fr;
   grid-auto-columns: 1fr;
   min-height: 12rem;
+  border-left: 4px solid;
+  border-bottom: 4px solid;
 }
 
 .chart li {

@@ -19,8 +19,20 @@
   </head>
   <body>
     <header>
-      <h1>Bar Chart Demo Page</h1>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <h1>Bar Chart Demo Page</h1>
+        <p>
+          Stretch project for Lighthouse Labs WD Bootcamp | By: Richard Stock
+        </p>
+      </div>
     </header>
+    <hr />
     <h2>CHART DATA</h2>
 
     <section class="value-input">
@@ -53,32 +65,45 @@
 
     <section class="labels-position">
       <h4>Positioning</h4>
-      <div style="display: flex; align-items: center; justify-content: space-between; width: 575px">
-      <p>Select the position of the labels inside the bar:</p>
-      <div class="select-position">
-        <select name="labelPosition">
-          <option value="flex-end">Top</option>
-          <option value="center">Middle</option>
-          <option value="flex-start">Bottom</option>
-        </select>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 575px;
+        "
+      >
+        <p>Select the position of the labels inside the bar:</p>
+        <div class="select-position">
+          <select name="labelPosition">
+            <option value="flex-end">Top</option>
+            <option value="center">Middle</option>
+            <option value="flex-start">Bottom</option>
+          </select>
+        </div>
       </div>
-    </div>
     </section>
 
     <section class="bar-spacing">
-
-      <div style="display: flex; align-items: center; justify-content: space-between; width: 525px">
-      <p>Select the amount of space between the bars:</p>
-      <div class="select-spacing">
-        <select name="barSpacing">
-          <option value="0.5">0.5</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 525px;
+        "
+      >
+        <p>Select the amount of space between the bars:</p>
+        <div class="select-spacing">
+          <select name="barSpacing">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
       </div>
-    </div>
     </section>
 
     <h4>Colors</h4>

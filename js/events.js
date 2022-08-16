@@ -3,36 +3,27 @@
 import Chart from "./data.js";
 import { displayChart, displayValues } from "./view.js";
 
-export const handleAdd = () => {
-  Chart.add = (value) => {
-    Chart.values.push(value);
-  };
+export const addValue = () => {
 
-  // Handle value addition
   $(document).on("click", ".value-input .value-add", function () {
     let newValue = $('.value-input input[name="newValue"]').val();
-    Chart.add(Number(newValue));
+    Chart.values.push(Number(newValue));
     displayValues();
     displayChart();
-    console.log(Chart.values);
   });
 };
 
-export const handleRemove = () => {
-  Chart.remove = (id) => {
-    Chart.values.splice(id, 1);
-  };
+export const removeValue = () => {
 
-  // Handle value removal
   $(".value-removal .value-remove").on("click", function () {
     let removeValue = $('.value-removal input[name="removeValue"]').val();
-    Chart.remove(Number(removeValue));
+    Chart.values.splice(Number(removeValue), 1);
     displayValues();
     displayChart();
   });
 };
 
-export const changePosition = () => {
+export const changeLabelPosition = () => {
   $(".labels-position .select-position").on("click", function () {
     let position = $('.labels-position select[name="labelPosition"]').val();
     Chart.options.labelsPosition = position;
@@ -40,7 +31,7 @@ export const changePosition = () => {
   });
 };
 
-export const changeSpacing = () => {
+export const changeBarSpacing = () => {
   $(".bar-spacing .select-spacing").on("click", function () {
     let spacing = $('.bar-spacing select[name="barSpacing"]').val();
     Chart.options.barSpacing = spacing;

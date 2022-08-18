@@ -18,9 +18,11 @@ export const displayValues = () => {
 };
 
 export const displayChart = () => {
+  $(".y-axis").html("");
   $(".chart").html("");
 
   // reset html prior to mapping
+  let htmlYAxisTicks = "";
   let htmlBars = "";
   let htmlChart = "";
 
@@ -37,6 +39,20 @@ export const displayChart = () => {
   let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
   let gridlineSize = height / numGridlines;
   console.log(topChart);
+
+  // set CSS variables for Y-axis
+  document.documentElement.style.setProperty(
+    "--y-axis-size",
+    `10px ${gridlineSize}px`
+  );
+  document.documentElement.style.setProperty(
+    "--y-axis-rows",
+    `repeat(${numGridlines}, 1fr)`
+  );
+  document.documentElement.style.setProperty(
+    "--y-axis-height",
+    `${Number(height) + 10}px`
+  );
 
   // build chart bar list html
   Chart.values.map((value, index) => {
@@ -62,5 +78,6 @@ export const displayChart = () => {
   </ul>`;
 
   // Update the chart display DOM element
+  $(".y-axis").append(htmlYAxisTicks);
   $(".chart").append(htmlChart);
 };

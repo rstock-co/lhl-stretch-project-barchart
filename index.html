@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Silkscreen"
+      href="https://fonts.googleapis.com/css?family=Oxygen"
     />
 
     <title>Bar Chart Demo Page</title>
@@ -102,7 +102,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 575px;
+          width: 415px;
         "
       >
         <p>Select the position of the labels inside the bar:</p>
@@ -122,14 +122,14 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 525px;
+          width: 390px;
         "
       >
         <p>Select the amount of space between the bars:</p>
         <div class="select-spacing">
           <select name="barSpacing">
             <option value="0.5">0.5</option>
-            <option value="1">1</option>
+            <option selected="selected">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -144,7 +144,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 525px;
+          width: 385px;
         "
       >
         <p>Select the number of gridlines on the Y-axis:</p>
@@ -153,7 +153,7 @@
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option selected="selected">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
@@ -165,6 +165,10 @@
     </section>
 
     <h2>CHART DISPLAY</h2>
-    <section class="chart"></section>
+    <div style="display: flex;">
+      <section class="y-axis-labels"></section>
+      <section class="y-axis-ticks"></section>
+      <section class="chart"></section>
+    </div>
   </body>
 </html>

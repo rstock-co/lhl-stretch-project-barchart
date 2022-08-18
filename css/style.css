@@ -1,3 +1,9 @@
+:root {
+  --y-axis-rows: '---';
+  --y-axis-size: '---';
+  --y-axis-height: '---';
+}
+
 nav {
   position: sticky;
   top: 0;
@@ -5,7 +11,17 @@ nav {
 }
 
 body {
-  font-family: "Silkscreen", sans-serif;
+  font-family: "Oxygen", sans-serif;
+}
+
+.y-axis-ticks {
+  display: grid;
+  grid-template-rows: var(--y-axis-rows);
+  background-size: var(--y-axis-size);
+  background-image: linear-gradient(to bottom, black 4px, transparent 1px);
+  height: var(--y-axis-height);
+  width: 10px;
+
 }
 
 .chart-display {
@@ -15,8 +31,6 @@ body {
   align-items: stretch;
   margin: 0;
   padding: 0;
-  grid-auto-rows: 1fr;
-  grid-auto-columns: 1fr;
   border-left: 4px solid;
   border-bottom: 4px solid;
 

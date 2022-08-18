@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <nav>
     <header>
       <div
         style="
@@ -27,17 +28,18 @@
         "
       >
         <h1>Bar Chart Demo Page</h1>
-        <p>
-          Stretch project for Lighthouse Labs WD Bootcamp | By: Richard Stock
+        <p style="color: rgb(14, 90, 77)">
+          Lighthouse Labs | Web Development Bootcamp | <strong> Richard Stock </strong>
         </p>
       </div>
     </header>
     <hr />
+  </nav>
     <h2>CHART DATA</h2>
 
     <section class="value-input">
       <h4>Add Values</h4>
-      <p>Please enter a value to add to the bar chart.</p>
+      <p>Enter a value to add to the bar chart:</p>
       <div class="input-wrapper">
         <input name="newValue" type="number" placeholder="Value" />
         <input class="value-add" type="button" value="Add" />
@@ -51,7 +53,7 @@
 
     <section class="value-removal">
       <h4>Remove Values</h4>
-      <p>Please enter the index of the value to remove from the bar chart.</p>
+      <p>Enter the index of the value to remove from the bar chart:</p>
       <div class="input-wrapper">
         <input name="removeValue" type="number" placeholder="Index" />
         <input class="value-remove" type="button" value="Remove" />
@@ -62,9 +64,9 @@
     <br />
 
     <h2>CHART OPTIONS</h2>
+    <h4>Display</h4>
 
     <section class="labels-position">
-      <h4>Positioning</h4>
       <div
         style="
           display: flex;
@@ -106,6 +108,31 @@
       </div>
     </section>
 
+    <section class="gridlines">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 525px;
+        "
+      >
+        <p>Select the number of gridlines on the Y-axis:</p>
+        <div class="num-gridlines">
+          <select name="numGridlines">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
     <h4>Colors</h4>
     <section class="colors">
       <p>Enter the chart colors:</p>
@@ -121,7 +148,7 @@
       </div>
     </section>
 
-    <h4>Chart Size</h4>
+    <h4>Size</h4>
     <section class="chart-size">
       <p>Enter the chart size (in pixels):</p>
       <div style="display: flex; justify-content: space-between; width: 550px">

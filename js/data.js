@@ -11,7 +11,7 @@ const Chart = {
     barColor: '#ffd100',        // needs to be customizable (also for each label if stacked bar chart)
     labelColor: 'black',        // needs to be customizable (also for each label if stacked bar chart)
     barSpacing: 0.5,            // needs to be customizable
-    yAxisSpacing: 10,           // needs to be either customizable or calculated based on the values themselves
+    numGridlines: 5,            // needs to be either customizable or calculated based on the values themselves
     chartTitleFontSize: 16,     // needs to set and shown dynamically, and customizable
     chartTitleFontColor: 'blue' // needs to set and shown dynamically, and customizable
   },

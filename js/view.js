@@ -34,6 +34,7 @@ export const displayChart = () => {
 
   let maxValue = Math.max(...Chart.values);
 
+
   // build chart bar list html
   Chart.values.map((value, index) => {
     let calc = maxValue - value + 1;

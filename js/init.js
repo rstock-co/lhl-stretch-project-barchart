@@ -1,6 +1,6 @@
 // This module initializes the app to be ready to handle DOM events
 
-import { addValue, removeValue, changeLabelPosition, changeBarSpacing, changeColors, changeSize } from "./events.js";
+import { changeData, changeDisplay, changeColors, changeSize } from "./events.js";
 import { displayValues, displayChart } from "./view.js";
 
 export const init = () => {
@@ -11,10 +11,8 @@ export const init = () => {
 };
 
 const initializeEventHandlers = () => {
-  addValue();
-  removeValue();
-  changeLabelPosition();
-  changeBarSpacing();
+  changeData();
+  changeDisplay();
   changeColors();
   changeSize();
 };

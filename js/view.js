@@ -21,8 +21,8 @@ export const displayChart = () => {
   $(".chart").html("");
 
   // reset html prior to mapping
-  let htmlBars = '';
-  let htmlChart = '';
+  let htmlBars = "";
+  let htmlChart = "";
 
   // dynamic CSS variables
   let position = Chart.options.labelsPosition;
@@ -36,8 +36,7 @@ export const displayChart = () => {
   let maxValue = Math.max(...Chart.values);
   let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
   let gridlineSize = height / numGridlines;
-  console.log(topChart)
-
+  console.log(topChart);
 
   // build chart bar list html
   Chart.values.map((value, index) => {
@@ -60,7 +59,7 @@ export const displayChart = () => {
   background-image:
    linear-gradient(to bottom, grey 1px, transparent 1px);">
   ${htmlBars}
-  </ul>`
+  </ul>`;
 
   // Update the chart display DOM element
   $(".chart").append(htmlChart);

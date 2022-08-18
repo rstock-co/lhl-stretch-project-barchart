@@ -19,22 +19,23 @@
   </head>
   <body>
     <nav>
-    <header>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <h1>Bar Chart Demo Page</h1>
-        <p style="color: rgb(14, 90, 77)">
-          Lighthouse Labs | Web Development Bootcamp | <strong> Richard Stock </strong>
-        </p>
-      </div>
-    </header>
-    <hr />
-  </nav>
+      <header>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <h1>Bar Chart Demo Page</h1>
+          <p style="color: rgb(14, 90, 77)">
+            Lighthouse Labs | Web Development Bootcamp |
+            <strong> Richard Stock </strong>
+          </p>
+        </div>
+      </header>
+      <hr />
+    </nav>
     <h2>CHART DATA</h2>
 
     <section class="value-input">
@@ -61,10 +62,39 @@
     </section>
 
     <br />
-    <br />
 
     <h2>CHART OPTIONS</h2>
-    <h4>Display</h4>
+    <h4>Size</h4>
+    <section class="chart-size">
+      <p>Enter the chart size (in pixels):</p>
+      <div style="display: flex; justify-content: space-between; width: 550px">
+        <div class="chart-height">
+          <input name="chartHeight" type="string" placeholder="height" />
+          <input class="change-chart-height" type="button" value="Change" />
+        </div>
+        <div class="chart-width">
+          <input name="chartWidth" type="string" placeholder="width" />
+          <input class="change-chart-width" type="button" value="Change" />
+        </div>
+      </div>
+    </section>
+
+    <h4>Colors</h4>
+    <section class="colors">
+      <p>Enter the chart colors:</p>
+      <div style="display: flex; justify-content: space-between; width: 550px">
+        <div class="input-bar-color">
+          <input name="barColor" type="string" placeholder="bar color" />
+          <input class="change-bar-color" type="button" value="Change" />
+        </div>
+        <div class="input-label-color">
+          <input name="labelColor" type="string" placeholder="label color" />
+          <input class="change-label-color" type="button" value="Change" />
+        </div>
+      </div>
+    </section>
+
+    <h4 style="margin-bottom: 0">Display</h4>
 
     <section class="labels-position">
       <div
@@ -128,43 +158,11 @@
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
+            <option value="10">10</option>
           </select>
         </div>
       </div>
     </section>
-
-    <h4>Colors</h4>
-    <section class="colors">
-      <p>Enter the chart colors:</p>
-      <div style="display: flex; justify-content: space-between; width: 550px">
-        <div class="input-bar-color">
-          <input name="barColor" type="string" placeholder="bar color" />
-          <input class="change-bar-color" type="button" value="Change" />
-        </div>
-        <div class="input-label-color">
-          <input name="labelColor" type="string" placeholder="label color" />
-          <input class="change-label-color" type="button" value="Change" />
-        </div>
-      </div>
-    </section>
-
-    <h4>Size</h4>
-    <section class="chart-size">
-      <p>Enter the chart size (in pixels):</p>
-      <div style="display: flex; justify-content: space-between; width: 550px">
-        <div class="chart-height">
-          <input name="chartHeight" type="string" placeholder="height" />
-          <input class="change-chart-height" type="button" value="Change" />
-        </div>
-        <div class="chart-width">
-          <input name="chartWidth" type="string" placeholder="width" />
-          <input class="change-chart-width" type="button" value="Change" />
-        </div>
-      </div>
-    </section>
-
-    <br />
-    <br />
 
     <h2>CHART DISPLAY</h2>
     <section class="chart"></section>

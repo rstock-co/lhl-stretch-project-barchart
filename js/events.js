@@ -4,7 +4,6 @@ import Chart from "./data.js";
 import { displayChart, displayValues } from "./view.js";
 
 export const changeData = () => {
-
   $(document).on("click", ".value-input .value-add", function () {
     let newValue = $('.value-input input[name="newValue"]').val();
     Chart.values.push(Number(newValue));
@@ -38,7 +37,6 @@ export const changeDisplay = () => {
     Chart.options.numGridlines = numGridlines;
     displayChart();
   });
-
 };
 
 export const changeColors = () => {
@@ -46,7 +44,7 @@ export const changeColors = () => {
     let barColor = $('.colors input[name="barColor"]').val();
     Chart.options.barColor = barColor;
     displayChart();
-    console.log(`changed color to ${barColor}`)
+    console.log(`changed color to ${barColor}`);
   });
 
   $(".colors .change-label-color").on("click", function () {
@@ -69,4 +67,3 @@ export const changeSize = () => {
     displayChart();
   });
 };
-

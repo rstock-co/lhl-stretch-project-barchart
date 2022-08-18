@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Oxygen&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Oxygen"
     />
 
     <title>Bar Chart Demo Page</title>
@@ -20,29 +22,21 @@
   <body>
     <nav>
       <header>
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          "
-        >
-          <h1>Bar Chart Demo Page</h1>
-          <p style="color: rgb(14, 90, 77)">
-            Lighthouse Labs | Web Development Bootcamp |
-            <strong> Richard Stock </strong>
-          </p>
-        </div>
+        <h1>BAR CHART DEMO PAGE</h1>
+        <p style="color: rgb(14, 90, 77); margin-top: 0; padding: 3px">
+          <strong> By: Richard Stock </strong> &nbsp&nbsp | &nbsp&nbsp
+          Lighthouse Labs &nbsp&nbsp | &nbsp&nbsp Web Development Bootcamp
+        </p>
       </header>
       <hr />
     </nav>
-    <h2>CHART DATA</h2>
+    <h3>CHART DATA</h3>
 
     <section class="value-input">
       <h4>Add Values</h4>
       <p>Enter a value to add to the bar chart:</p>
       <div class="input-wrapper">
-        <input name="newValue" type="number" placeholder="Value" />
+        <input name="newValue" type="number" placeholder="Value" size="13" />
         <input class="value-add" type="button" value="Add" />
       </div>
     </section>
@@ -56,24 +50,34 @@
       <h4>Remove Values</h4>
       <p>Enter the index of the value to remove from the bar chart:</p>
       <div class="input-wrapper">
-        <input name="removeValue" type="number" placeholder="Index" />
+        <input name="removeValue" type="number" placeholder="Index" size="13" />
         <input class="value-remove" type="button" value="Remove" />
       </div>
     </section>
 
     <br />
 
-    <h2>CHART OPTIONS</h2>
+    <h3>CHART OPTIONS</h3>
     <h4>Size</h4>
     <section class="chart-size">
       <p>Enter the chart size (in pixels):</p>
-      <div style="display: flex; justify-content: space-between; width: 550px">
+      <div style="display: flex; justify-content: space-between; width: 420px">
         <div class="chart-height">
-          <input name="chartHeight" type="string" placeholder="height" />
+          <input
+            name="chartHeight"
+            type="string"
+            placeholder="height"
+            size="13"
+          />
           <input class="change-chart-height" type="button" value="Change" />
         </div>
         <div class="chart-width">
-          <input name="chartWidth" type="string" placeholder="width" />
+          <input
+            name="chartWidth"
+            type="string"
+            placeholder="width"
+            size="13"
+          />
           <input class="change-chart-width" type="button" value="Change" />
         </div>
       </div>
@@ -82,13 +86,23 @@
     <h4>Colors</h4>
     <section class="colors">
       <p>Enter the chart colors:</p>
-      <div style="display: flex; justify-content: space-between; width: 550px">
+      <div style="display: flex; justify-content: space-between; width: 420px">
         <div class="input-bar-color">
-          <input name="barColor" type="string" placeholder="bar color" />
+          <input
+            name="barColor"
+            type="string"
+            placeholder="bar color"
+            size="13"
+          />
           <input class="change-bar-color" type="button" value="Change" />
         </div>
         <div class="input-label-color">
-          <input name="labelColor" type="string" placeholder="label color" />
+          <input
+            name="labelColor"
+            type="string"
+            placeholder="label color"
+            size="13"
+          />
           <input class="change-label-color" type="button" value="Change" />
         </div>
       </div>
@@ -164,8 +178,8 @@
       </div>
     </section>
 
-    <h2>CHART DISPLAY</h2>
-    <div style="display: flex;">
+    <h3>CHART DISPLAY</h3>
+    <div style="display: flex">
       <section class="y-axis-labels"></section>
       <section class="y-axis-ticks"></section>
       <section class="chart"></section>

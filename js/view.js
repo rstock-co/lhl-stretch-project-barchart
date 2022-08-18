@@ -31,14 +31,19 @@ export const displayChart = () => {
   let labelColor = Chart.options.labelColor;
   let height = Chart.options.chartHeight;
   let width = Chart.options.chartWidth;
+  let numGridlines = Chart.options.numGridlines;
 
   let maxValue = Math.max(...Chart.values);
+  let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
+  let gridlineSize = height / numGridlines;
+  console.log(topChart)
 
 
   // build chart bar list html
   Chart.values.map((value, index) => {
-    let calc = maxValue - value + 1;
-    htmlBars += `<li style="grid-row: ${maxValue} / ${calc};
+    let calc = topChart - value + 1;
+
+    htmlBars += `<li style="grid-row: ${topChart + 1} / ${calc};
     grid-column: ${index + 1};
     justify-content: ${position};
     background: ${barColor};
@@ -48,8 +53,12 @@ export const displayChart = () => {
   });
 
   htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;
+  grid-template-rows: repeat(${topChart}, 1fr);
   height: ${height}px;
-  width: ${width}px;">
+  width: ${width}px;
+  background-size: 10px ${gridlineSize}px;
+  background-image:
+   linear-gradient(to bottom, grey 1px, transparent 1px);">
   ${htmlBars}
   </ul>`
 

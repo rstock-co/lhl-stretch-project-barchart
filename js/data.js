@@ -4,7 +4,7 @@ const Chart = {
   values: [2,5,9,13],           // need to also allow user to pass multiple values for each bar if stacked chart (array of arrays)
   options: {
     chartWidth: 500,
-    chartHeight: 100,
+    chartHeight: 300,
     labelsPosition: 'top',      // can be top, bottom, or middle of the bar
     barWidth: 100,              // needs to be calculated based on total amount of values
     barHeight: 900,             // needs to be calculated based on the values themselves

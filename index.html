@@ -30,164 +30,182 @@
       </header>
       <hr />
     </nav>
-    <h3>CHART DATA</h3>
-
-    <section class="value-input">
-      <h4>Add Values</h4>
-      <p>Enter a value to add to the bar chart (format: `label value` - ex: `Canada 145`):</p>
-      <div class="input-wrapper">
-        <input name="newValue" type="string" placeholder="Value" size="13" />
-        <input class="value-add" type="button" value="Add" />
-      </div>
-    </section>
-
-    <section class="value-display">
-      <h4>Current List of Values</h4>
-      <ul class="value-list"></ul>
-    </section>
-
-    <section class="value-removal">
-      <h4>Remove Values</h4>
-      <p>Enter the index of the value to remove from the bar chart:</p>
-      <div class="input-wrapper">
-        <input name="removeValue" type="number" placeholder="Index" size="13" />
-        <input class="value-remove" type="button" value="Remove" />
-      </div>
-    </section>
-
-    <br />
-
-    <h3>CHART OPTIONS</h3>
-    <h4>Size</h4>
-    <section class="chart-size">
-      <p>Enter the chart size (in pixels):</p>
-      <div style="display: flex; justify-content: space-between; width: 370px">
-        <div class="chart-height">
-          <input
-            name="chartHeight"
-            type="string"
-            placeholder="height"
-            size="13"
-          />
-          <input class="change-chart-height" type="button" value="Change" />
-        </div>
-        <div class="chart-width">
-          <input
-            name="chartWidth"
-            type="string"
-            placeholder="width"
-            size="13"
-          />
-          <input class="change-chart-width" type="button" value="Change" />
-        </div>
-      </div>
-    </section>
-
-    <h4>Colors</h4>
-    <section class="colors">
-      <p>Enter the chart colors:</p>
-      <div style="display: flex; justify-content: space-between; width: 370px">
-        <div class="input-bar-color">
-          <input
-            name="barColor"
-            type="string"
-            placeholder="bar color"
-            size="13"
-          />
-          <input class="change-bar-color" type="button" value="Change" />
-        </div>
-        <div class="input-label-color">
-          <input
-            name="labelColor"
-            type="string"
-            placeholder="label color"
-            size="13"
-          />
-          <input class="change-label-color" type="button" value="Change" />
-        </div>
-      </div>
-    </section>
-
-    <h4 style="margin-bottom: 0">Display</h4>
-
-    <section class="labels-position">
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 430px;
-        "
-      >
-        <p>Select the position of the labels inside the bar:</p>
-        <div class="select-position">
-          <select name="labelPosition">
-            <option value="flex-end">Top</option>
-            <option value="center">Middle</option>
-            <option value="flex-start">Bottom</option>
-          </select>
-        </div>
-      </div>
-    </section>
-
-    <section class="bar-spacing">
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 402px;
-        "
-      >
-        <p>Select the amount of space between the bars:</p>
-        <div class="select-spacing">
-          <select name="barSpacing">
-            <option value="0.5">0.5</option>
-            <option selected="selected">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
-      </div>
-    </section>
-
-    <section class="gridlines">
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 395px;
-        "
-      >
-        <p>Select the number of gridlines on the Y-axis:</p>
-        <div class="num-gridlines">
-          <select name="numGridlines">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option selected="selected">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-      </div>
-    </section>
-
-    <h3>CHART DISPLAY</h3>
     <div style="display: flex">
-      <section class="y-axis-labels"></section>
-      <section class="y-axis-ticks"></section>
-      <section class="chart"></section>
-    </div>
-    <div style="display: flex; font-weight: bold">
-    <!--<section class="x-axis-label-first"></section>-->
-    <section class="x-axis-labels"></section>
-  </div>
+      <section>
+        <h3>CHART DATA</h3>
 
+        <section class="value-input">
+          <h4>Add Values</h4>
+          <p>
+            Enter a value to add to the bar chart (format: `label value` - ex:
+            `Canada 145`):
+          </p>
+          <div class="input-wrapper">
+            <input
+              name="newValue"
+              type="string"
+              placeholder="Value"
+              size="13"
+            />
+            <input class="value-add" type="button" value="Add" />
+          </div>
+        </section>
+
+        <section class="value-removal">
+          <h4>Remove Values</h4>
+          <p>Enter the index of the value to remove from the bar chart:</p>
+          <div class="input-wrapper">
+            <input
+              name="removeValue"
+              type="number"
+              placeholder="Index"
+              size="13"
+            />
+            <input class="value-remove" type="button" value="Remove" />
+          </div>
+        </section>
+
+        <br />
+
+        <h3>CHART OPTIONS</h3>
+        <h4>Size</h4>
+        <section class="chart-size">
+          <p>Enter the chart size (in pixels):</p>
+          <div
+            style="display: flex; justify-content: space-between; width: 370px"
+          >
+            <div class="chart-height">
+              <input
+                name="chartHeight"
+                type="string"
+                placeholder="height"
+                size="13"
+              />
+              <input class="change-chart-height" type="button" value="Change" />
+            </div>
+            <div class="chart-width">
+              <input
+                name="chartWidth"
+                type="string"
+                placeholder="width"
+                size="13"
+              />
+              <input class="change-chart-width" type="button" value="Change" />
+            </div>
+          </div>
+        </section>
+
+        <h4>Colors</h4>
+        <section class="colors">
+          <p>Enter the chart colors:</p>
+          <div
+            style="display: flex; justify-content: space-between; width: 370px"
+          >
+            <div class="input-bar-color">
+              <input
+                name="barColor"
+                type="string"
+                placeholder="bar color"
+                size="13"
+              />
+              <input class="change-bar-color" type="button" value="Change" />
+            </div>
+            <div class="input-label-color">
+              <input
+                name="labelColor"
+                type="string"
+                placeholder="label color"
+                size="13"
+              />
+              <input class="change-label-color" type="button" value="Change" />
+            </div>
+          </div>
+        </section>
+
+        <h4 style="margin-bottom: 0">Display</h4>
+
+        <section class="labels-position">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 430px;
+            "
+          >
+            <p>Select the position of the labels inside the bar:</p>
+            <div class="select-position">
+              <select name="labelPosition">
+                <option value="flex-end">Top</option>
+                <option value="center">Middle</option>
+                <option value="flex-start">Bottom</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="bar-spacing">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 402px;
+            "
+          >
+            <p>Select the amount of space between the bars:</p>
+            <div class="select-spacing">
+              <select name="barSpacing">
+                <option value="0.5">0.5</option>
+                <option selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="gridlines">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 395px;
+            "
+          >
+            <p>Select the number of gridlines on the Y-axis:</p>
+            <div class="num-gridlines">
+              <select name="numGridlines">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option selected="selected">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <h3>CHART DISPLAY</h3>
+        <div style="display: flex">
+          <section class="y-axis-labels"></section>
+          <section class="y-axis-ticks"></section>
+          <section class="chart"></section>
+        </div>
+        <div style="display: flex; font-weight: bold">
+          <section class="x-axis-labels"></section>
+        </div>
+      </section>
+      <section class="value-display">
+        <h3>CURRENT CHART VALUES</h3>
+        <ul class="value-list"></ul>
+      </section>
+    </div>
   </body>
 </html>

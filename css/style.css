@@ -85,3 +85,10 @@ input, select {
   width: var(--x-axis-length);
   grid-template-columns: var(--x-axis-labels);
 }
+
+.value-display {
+  border-radius: 25px;
+  border: 2px solid #686868;
+  padding: 15px;
+  height: fit-content;
+}

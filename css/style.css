@@ -1,8 +1,11 @@
 :root {
   --y-axis-rows: '---';
   --y-axis-size: '---';
-  --y-axis-tick-height: '---';
-  --y-axis-label-height: '---';
+  --y-axis-height: '---';
+  --x-axis-length: '---';
+  --x-axis-first-label: '---';
+  --x-axis-length: '---';
+  --x-axis-labels: '---';
 }
 
 nav {
@@ -37,7 +40,7 @@ input, select {
   grid-template-rows: var(--y-axis-rows);
   background-size: var(--y-axis-size);
   background-image: linear-gradient(to bottom, black 4px, transparent 1px);
-  height: var(--y-axis-tick-height);
+  height: var(--y-axis-height);
   width: 10px;
 }
 
@@ -46,7 +49,7 @@ input, select {
   flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: space-between;
-  height: var(--y-axis-tick-height);
+  height: var(--y-axis-height);
   margin-right: 7px;
   font-weight:bold;
 }
@@ -72,4 +75,21 @@ input, select {
   border-radius: 50% 50% 0 0 / 10px 10px 0 0;
   font-weight: bold;
   font-size: x-large;
+}
+
+.x-axis-label-first {
+  display: grid;
+  margin-left: 44px;
+  margin-top: 0;
+  width: var(--x-axis-first-label);
+  justify-items:end;
+}
+
+.x-axis-labels {
+  display: grid;
+  justify-items: end;
+  margin-top: 0;
+  width: var(--x-axis-length);
+  grid-template-columns: var(--x-axis-labels);
+
 }

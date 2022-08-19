@@ -20,9 +20,11 @@ export const displayValues = () => {
 export const displayChart = () => {
   $(".y-axis-labels").html("");
   $(".chart").html("");
+  $(".x-axis-labels").html("");
 
   // reset html prior to mapping
   let htmlYAxisLabels = "";
+  let htmlXAxisLabels = "";
   let htmlBars = "";
   let htmlChart = "";
 
@@ -50,21 +52,42 @@ export const displayChart = () => {
     `repeat(${numGridlines}, 1fr)`
   );
   document.documentElement.style.setProperty(
-    "--y-axis-tick-height",
+    "--y-axis-height",
     `${Number(height) + 10}px`
-  );
-  document.documentElement.style.setProperty(
-    "--y-axis-label-height",
-    `${Number(height)}px`
   );
 
   // build Y-axis label set
 
-  let gridlineSpacing = topChart / numGridlines;
-  let gridlineLabel = 0;
+  let YSpacing = topChart / numGridlines;
+  let YLabel = 0;
   for (let i = 0; i <= numGridlines; i++) {
-    htmlYAxisLabels += `<p style="padding: 0px; margin: 0px;">${gridlineLabel}</p>`;
-    gridlineLabel += gridlineSpacing;
+    htmlYAxisLabels += `<p style="padding: 0px; margin: 0px;">${YLabel}</p>`;
+    YLabel += YSpacing;
+  }
+
+  // build X-axis label set
+
+  let space = spacing * 14;
+  let barWidth =
+    (width - (Chart.values.length - 1) * space) / Chart.values.length;
+
+  document.documentElement.style.setProperty(
+    "--x-axis-first-label",
+    `${barWidth / 2}px`
+  );
+  document.documentElement.style.setProperty(
+    "--x-axis-length",
+    `${Number(width) - barWidth / 2}px`
+  );
+  document.documentElement.style.setProperty(
+    "--x-axis-labels",
+    `repeat(${Chart.values.length - 1}, ${barWidth + space + 1}px)`
+  );
+
+  let XLabel = 0;
+  for (let i = 1; i < Chart.values.length; i++) {
+    XLabel = i;
+    htmlXAxisLabels += `<p style="padding: 0px; margin: 0px;">${XLabel}</p>`;
   }
 
   // build chart bar list html
@@ -93,4 +116,5 @@ export const displayChart = () => {
   // Update the chart display DOM element
   $(".y-axis-labels").append(htmlYAxisLabels);
   $(".chart").append(htmlChart);
+  $(".x-axis-labels").append(htmlXAxisLabels);
 };

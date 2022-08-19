@@ -1,7 +1,8 @@
 :root {
   --y-axis-rows: '---';
   --y-axis-size: '---';
-  --y-axis-height: '---';
+  --y-axis-tick-height: '---';
+  --y-axis-label-height: '---';
 }
 
 nav {
@@ -25,7 +26,7 @@ h3 {
   font-family: "Lato", sans-serif;
 }
 
-input, select{
+input, select {
   padding:4px;
   font-size:14px;
   font-family:"Oxygen", sans-serif;
@@ -36,9 +37,18 @@ input, select{
   grid-template-rows: var(--y-axis-rows);
   background-size: var(--y-axis-size);
   background-image: linear-gradient(to bottom, black 4px, transparent 1px);
-  height: var(--y-axis-height);
+  height: var(--y-axis-tick-height);
   width: 10px;
+}
 
+.y-axis-labels {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: var(--y-axis-tick-height);
+  margin-right: 7px;
+  font-weight:bold;
 }
 
 .chart-display {

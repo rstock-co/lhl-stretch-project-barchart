@@ -10,7 +10,7 @@ export const displayValues = () => {
 
   // build value list html
   Chart.values.map((value, index) => {
-    htmlList += `<li>index: ${index}, label: ${value[0]}, value: ${value[1]}</li>`;
+    htmlList += `<li><i>index</i>: <b>${index}</b>, <i>label</i>: <b>${value[0]}</b>, <i>value</i>: <b>${value[1]}</b></li>`;
   });
 
   // Update the value list DOM element

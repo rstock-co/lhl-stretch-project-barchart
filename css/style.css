@@ -77,19 +77,11 @@ input, select {
   font-size: x-large;
 }
 
-.x-axis-label-first {
-  display: grid;
-  margin-left: 44px;
-  margin-top: 0;
-  width: var(--x-axis-first-label);
-  justify-items:end;
-}
-
 .x-axis-labels {
   display: grid;
+  margin-left: 44px;
   justify-items: end;
   margin-top: 0;
   width: var(--x-axis-length);
   grid-template-columns: var(--x-axis-labels);
-
 }

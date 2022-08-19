@@ -34,9 +34,9 @@
 
     <section class="value-input">
       <h4>Add Values</h4>
-      <p>Enter a value to add to the bar chart:</p>
+      <p>Enter a value to add to the bar chart (format: `label value` - ex: `Canada 145`):</p>
       <div class="input-wrapper">
-        <input name="newValue" type="number" placeholder="Value" size="13" />
+        <input name="newValue" type="string" placeholder="Value" size="13" />
         <input class="value-add" type="button" value="Add" />
       </div>
     </section>
@@ -185,9 +185,7 @@
       <section class="chart"></section>
     </div>
     <div style="display: flex; font-weight: bold">
-    <section class="x-axis-label-first">
-      <p style="padding: 0px; margin: 0px;">0</p>
-    </section>
+    <!--<section class="x-axis-label-first"></section>-->
     <section class="x-axis-labels"></section>
   </div>
 

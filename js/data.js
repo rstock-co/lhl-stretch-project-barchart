@@ -1,7 +1,7 @@
 // Define the data structure / requirements for the bar chart, based on project specifications
 
 const Chart = {
-  values: [54,96,132,77,36,83,102],           // need to also allow user to pass multiple values for each bar if stacked chart (array of arrays)
+  values: [['CAL',54],['VAN',96],['TOR',132],['WAS',77],['NYC',236],['SEA',83],['EDM',77]],           // need to also allow user to pass multiple values for each bar if stacked chart (array of arrays)
   options: {
     chartWidth: 600,
     chartHeight: 300,

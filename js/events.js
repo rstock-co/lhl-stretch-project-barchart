@@ -6,7 +6,10 @@ import { displayChart, displayValues } from "./view.js";
 export const changeData = () => {
   $(document).on("click", ".value-input .value-add", function () {
     let newValue = $('.value-input input[name="newValue"]').val();
-    Chart.values.push(Number(newValue));
+    let array = newValue.split(" ");
+    array[1] = Number(array[1]);
+    Chart.values.push(array);
+    console.log(Chart.values);
     displayValues();
     displayChart();
   });
@@ -14,6 +17,7 @@ export const changeData = () => {
   $(".value-removal .value-remove").on("click", function () {
     let removeValue = $('.value-removal input[name="removeValue"]').val();
     Chart.values.splice(Number(removeValue), 1);
+    console.log("CAL 190".split(" "));
     displayValues();
     displayChart();
   });

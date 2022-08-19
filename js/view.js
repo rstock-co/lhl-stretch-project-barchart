@@ -10,7 +10,7 @@ export const displayValues = () => {
 
   // build value list html
   Chart.values.map((value, index) => {
-    htmlList += `<li>index: ${index}, value: ${value}</li>`;
+    htmlList += `<li>index: ${index}, label: ${value[0]}, value: ${value[1]}</li>`;
   });
 
   // Update the value list DOM element
@@ -24,7 +24,7 @@ export const displayChart = () => {
 
   // reset html prior to mapping
   let htmlYAxisLabels = "";
-  let htmlXAxisLabels = "";
+  let htmlXAxisLabels = '';
   let htmlBars = "";
   let htmlChart = "";
 
@@ -37,7 +37,15 @@ export const displayChart = () => {
   let width = Chart.options.chartWidth;
   let numGridlines = Chart.options.numGridlines;
 
-  let maxValue = Math.max(...Chart.values);
+  const getMixedArrayMax = array => Math.max(...array.filter(val => typeof val === 'number'));
+
+  let maxValue = 0;
+  Chart.values.forEach(array => {
+    let value = getMixedArrayMax(array);
+    if (value > maxValue) maxValue = value;
+  } )
+
+  console.log(maxValue);
   let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
   let gridlineSize = height / numGridlines;
   console.log(topChart);
@@ -72,34 +80,29 @@ export const displayChart = () => {
     (width - (Chart.values.length - 1) * space) / Chart.values.length;
 
   document.documentElement.style.setProperty(
-    "--x-axis-first-label",
-    `${barWidth / 2}px`
-  );
-  document.documentElement.style.setProperty(
     "--x-axis-length",
     `${Number(width) - barWidth / 2}px`
   );
+
   document.documentElement.style.setProperty(
     "--x-axis-labels",
-    `repeat(${Chart.values.length - 1}, ${barWidth + space + 1}px)`
+    `${(barWidth / 2) + 5}px repeat(${Chart.values.length - 1}, ${barWidth + space + 3}px)`
   );
 
-  let XLabel = 0;
-  for (let i = 1; i < Chart.values.length; i++) {
-    XLabel = i;
-    htmlXAxisLabels += `<p style="padding: 0px; margin: 0px;">${XLabel}</p>`;
+  for (let i = 0; i < Chart.values.length; i++) {
+    htmlXAxisLabels += `<p style="padding: 0px; margin: 1; transform: rotate(-45deg);">${Chart.values[i][0]}</p>`;
   }
 
   // build chart bar list html
   Chart.values.map((value, index) => {
-    let calc = topChart - value + 1;
+    let calc = topChart - value[1] + 1;
 
     htmlBars += `<li style="grid-row: ${topChart + 1} / ${calc};
     grid-column: ${index + 1};
     justify-content: ${position};
     background: ${barColor};
     color: ${labelColor}">
-    ${value}
+    ${value[1]}
     </li>`;
   });
 

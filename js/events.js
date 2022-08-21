@@ -9,7 +9,6 @@ export const changeData = () => {
     let array = newValue.split(" ");
     array[1] = Number(array[1]);
     Chart.values.push(array);
-    console.log(Chart.values);
     displayValues();
     displayChart();
   });
@@ -17,8 +16,55 @@ export const changeData = () => {
   $(".value-removal .value-remove").on("click", function () {
     let removeValue = $('.value-removal input[name="removeValue"]').val();
     Chart.values.splice(Number(removeValue), 1);
-    console.log("CAL 190".split(" "));
     displayValues();
+    displayChart();
+  });
+};
+
+export const changeTitle = () => {
+  $(".chart-title .title-button").on("click", function () {
+    let title = $('.chart-title input[name="chartTitle"]').val();
+    Chart.options.chartTitle = title;
+    displayChart();
+  });
+
+  $(".title-display .change-title-size").on("click", function () {
+    let titleFontSize = $('.title-display input[name="titleSize"]').val();
+    Chart.options.titleFontSize = titleFontSize;
+    displayChart();
+  });
+
+  $(".title-display .change-title-color").on("click", function () {
+    let titleColor = $('.title-display input[name="titleColor"]').val();
+    Chart.options.titleFontColor = titleColor;
+    displayChart();
+  });
+}
+
+export const changeSize = () => {
+  $(".chart-size .change-chart-height").on("click", function () {
+    let chartHeight = $('.chart-size input[name="chartHeight"]').val();
+    Chart.options.chartHeight = chartHeight;
+    displayChart();
+  });
+
+  $(".chart-size .change-chart-width").on("click", function () {
+    let chartWidth = $('.chart-size input[name="chartWidth"]').val();
+    Chart.options.chartWidth = chartWidth;
+    displayChart();
+  });
+};
+
+export const changeColors = () => {
+  $(".colors .change-bar-color").on("click", function () {
+    let barColor = $('.colors input[name="barColor"]').val();
+    Chart.options.barColor = barColor;
+    displayChart();
+  });
+
+  $(".colors .change-label-color").on("click", function () {
+    let labelColor = $('.colors input[name="labelColor"]').val();
+    Chart.options.labelColor = labelColor;
     displayChart();
   });
 };
@@ -43,31 +89,3 @@ export const changeDisplay = () => {
   });
 };
 
-export const changeColors = () => {
-  $(".colors .change-bar-color").on("click", function () {
-    let barColor = $('.colors input[name="barColor"]').val();
-    Chart.options.barColor = barColor;
-    displayChart();
-    console.log(`changed color to ${barColor}`);
-  });
-
-  $(".colors .change-label-color").on("click", function () {
-    let labelColor = $('.colors input[name="labelColor"]').val();
-    Chart.options.labelColor = labelColor;
-    displayChart();
-  });
-};
-
-export const changeSize = () => {
-  $(".chart-size .change-chart-height").on("click", function () {
-    let chartHeight = $('.chart-size input[name="chartHeight"]').val();
-    Chart.options.chartHeight = chartHeight;
-    displayChart();
-  });
-
-  $(".chart-size .change-chart-width").on("click", function () {
-    let chartWidth = $('.chart-size input[name="chartWidth"]').val();
-    Chart.options.chartWidth = chartWidth;
-    displayChart();
-  });
-};

@@ -36,9 +36,9 @@
 
         <section class="value-input">
           <h4>Add Values</h4>
-          <p>
-            Enter a value to add to the bar chart (format: <b>`label value`</b>  |  example:
-            <b>`Atlanta 367`)</b>:
+          <p style="margin-right: 2">
+            Enter a value to add to the bar chart (format:
+            <b>`label value`</b> | example: <b>`Atlanta 367`</b>):
           </p>
           <div class="input-wrapper">
             <input
@@ -53,7 +53,10 @@
 
         <section class="value-removal">
           <h4>Remove Values</h4>
-          <p>Enter the <b><i>index</i></b> of the value to remove from the bar chart:</p>
+          <p>
+            Enter the <b><i>index</i></b> of the value to remove from the bar
+            chart:
+          </p>
           <div class="input-wrapper">
             <input
               name="removeValue"
@@ -68,7 +71,57 @@
         <br />
 
         <h3>CHART OPTIONS</h3>
+
+        <h4 style="margin-bottom: 0;">Title</h4>
+
+        <section class="chart-title">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 500px;
+            "
+          >
+            <p>Enter the chart title:</p>
+            <div class="input-title">
+              <input
+                name="chartTitle"
+                type="string"
+                placeholder="Title"
+                size="39"
+              />
+              <input class="title-button" type="button" value="Change" />
+            </div>
+          </div>
+        </section>
+        <section class="title-display">
+          <p>Enter the title font size <i>(in pixels),</i> and title font color:</p>
+          <div
+            style="display: flex; justify-content: space-between; width: 370px"
+          >
+            <div class="title-size">
+              <input
+                name="titleSize"
+                type="string"
+                placeholder="title size"
+                size="13"
+              />
+              <input class="change-title-size" type="button" value="Change" />
+            </div>
+            <div class="title-color">
+              <input
+                name="titleColor"
+                type="string"
+                placeholder="title color"
+                size="13"
+              />
+              <input class="change-title-color" type="button" value="Change" />
+            </div>
+          </section>
+
         <h4>Size</h4>
+
         <section class="chart-size">
           <p>Enter the chart size <i>(in pixels)</i>:</p>
           <div
@@ -192,7 +245,10 @@
           </div>
         </section>
 
+
+
         <h3>CHART DISPLAY</h3>
+        <section class="title"></section>
         <div style="display: flex">
           <section class="y-axis-labels"></section>
           <section class="y-axis-ticks"></section>

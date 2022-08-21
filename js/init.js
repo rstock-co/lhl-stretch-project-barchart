@@ -2,9 +2,10 @@
 
 import {
   changeData,
-  changeDisplay,
-  changeColors,
   changeSize,
+  changeColors,
+  changeDisplay,
+  changeTitle
 } from "./events.js";
 import { displayValues, displayChart } from "./view.js";
 
@@ -17,7 +18,8 @@ export const init = () => {
 
 const initializeEventHandlers = () => {
   changeData();
-  changeDisplay();
-  changeColors();
   changeSize();
+  changeColors();
+  changeDisplay();
+  changeTitle();
 };

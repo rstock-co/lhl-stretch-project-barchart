@@ -35,6 +35,13 @@ input, select {
   font-family:"Oxygen", sans-serif;
 }
 
+.title {
+  display: grid;
+  margin-left: 44px;
+  justify-items: center;
+  font-weight: bold;
+}
+
 .y-axis-ticks {
   display: grid;
   grid-template-rows: var(--y-axis-rows);

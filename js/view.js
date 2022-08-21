@@ -18,17 +18,22 @@ export const displayValues = () => {
 };
 
 export const displayChart = () => {
+  $(".title").html("");
   $(".y-axis-labels").html("");
   $(".chart").html("");
   $(".x-axis-labels").html("");
 
   // reset html prior to mapping
+  let htmlTitle = '';
   let htmlYAxisLabels = "";
   let htmlXAxisLabels = '';
   let htmlBars = "";
   let htmlChart = "";
 
   // dynamic CSS variables
+  let title = Chart.options.chartTitle;
+  let titleSize = Chart.options.titleFontSize;
+  let titleColor = Chart.options.titleFontColor;
   let position = Chart.options.labelsPosition;
   let spacing = Chart.options.barSpacing;
   let barColor = Chart.options.barColor;
@@ -45,10 +50,12 @@ export const displayChart = () => {
     if (value > maxValue) maxValue = value;
   } )
 
-  console.log(maxValue);
   let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
   let gridlineSize = height / numGridlines;
-  console.log(topChart);
+
+  // title
+
+  htmlTitle = `<p style="font-size:${titleSize}px; color:${titleColor}; margin-top: 0; margin-bottom: 20px; padding: 0;">${title}</p>`
 
   // set CSS variables for Y-axis
   document.documentElement.style.setProperty(
@@ -75,7 +82,7 @@ export const displayChart = () => {
 
   // build X-axis label set
 
-  let space = spacing * 14;
+  let space = spacing * 14;  // font size is 14 pixels
   let barWidth =
     (width - (Chart.values.length - 1) * space) / Chart.values.length;
 
@@ -83,7 +90,6 @@ export const displayChart = () => {
     "--x-axis-length",
     `${Number(width) - barWidth / 2}px`
   );
-
   document.documentElement.style.setProperty(
     "--x-axis-labels",
     `${(barWidth / 2) + 5}px repeat(${Chart.values.length - 1}, ${barWidth + space + 3}px)`
@@ -117,6 +123,7 @@ export const displayChart = () => {
   </ul>`;
 
   // Update the chart display DOM element
+  $(".title").append(htmlTitle);
   $(".y-axis-labels").append(htmlYAxisLabels);
   $(".chart").append(htmlChart);
   $(".x-axis-labels").append(htmlXAxisLabels);

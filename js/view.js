@@ -2,6 +2,8 @@
 
 import Chart from "./data.js";
 
+const getMixedArrayMax = array => Math.max(...array.filter(val => typeof val === 'number'));
+
 export const displayValues = () => {
   $(".value-display .value-list").html("");
 
@@ -17,41 +19,40 @@ export const displayValues = () => {
   $(".value-display .value-list").append(htmlList);
 };
 
-export const displayChart = () => {
+export const drawBarChart = (data, options, element) => {
+
+  // reset html prior to mapping
   $(".title").html("");
   $(".y-axis-labels").html("");
   $(".chart").html("");
   $(".x-axis-labels").html("");
 
-  // reset html prior to mapping
-  let htmlTitle = '';
-  let htmlYAxisLabels = "";
-  let htmlXAxisLabels = '';
-  let htmlBars = "";
-  let htmlChart = "";
-
   // dynamic CSS variables
-  let title = Chart.options.chartTitle;
-  let titleSize = Chart.options.titleFontSize;
-  let titleColor = Chart.options.titleFontColor;
-  let position = Chart.options.labelsPosition;
-  let spacing = Chart.options.barSpacing;
-  let barColor = Chart.options.barColor;
-  let labelColor = Chart.options.labelColor;
-  let height = Chart.options.chartHeight;
-  let width = Chart.options.chartWidth;
-  let numGridlines = Chart.options.numGridlines;
-
-  const getMixedArrayMax = array => Math.max(...array.filter(val => typeof val === 'number'));
+  let title = options.chartTitle;
+  let titleSize = options.titleFontSize;
+  let titleColor = options.titleFontColor;
+  let position = options.labelsPosition;
+  let spacing = options.barSpacing;
+  let barColor = options.barColor;
+  let labelColor = options.labelColor;
+  let height = options.chartHeight;
+  let width = options.chartWidth;
+  let numGridlines = options.numGridlines;
 
   let maxValue = 0;
-  Chart.values.forEach(array => {
+  data.forEach(array => {
     let value = getMixedArrayMax(array);
     if (value > maxValue) maxValue = value;
   } )
 
   let topChart = Math.ceil(maxValue / numGridlines) * numGridlines;
   let gridlineSize = height / numGridlines;
+
+  let htmlTitle = '';
+  let htmlYAxisLabels = "";
+  let htmlXAxisLabels = '';
+  let htmlBars = "";
+  let htmlChart = "";
 
   // title
 
@@ -84,7 +85,7 @@ export const displayChart = () => {
 
   let space = spacing * 14;  // font size is 14 pixels
   let barWidth =
-    (width - (Chart.values.length - 1) * space) / Chart.values.length;
+    (width - (data.length - 1) * space) / data.length;
 
   document.documentElement.style.setProperty(
     "--x-axis-length",
@@ -92,15 +93,15 @@ export const displayChart = () => {
   );
   document.documentElement.style.setProperty(
     "--x-axis-labels",
-    `${(barWidth / 2) + 5}px repeat(${Chart.values.length - 1}, ${barWidth + space + 3}px)`
+    `${(barWidth / 2) + 5}px repeat(${data.length - 1}, ${barWidth + space + 3}px)`
   );
 
-  for (let i = 0; i < Chart.values.length; i++) {
-    htmlXAxisLabels += `<p style="padding: 0px; margin: 1; transform: rotate(-45deg);">${Chart.values[i][0]}</p>`;
+  for (let i = 0; i < data.length; i++) {
+    htmlXAxisLabels += `<p style="padding: 0px; margin: 1; transform: rotate(-45deg);">${data[i][0]}</p>`;
   }
 
   // build chart bar list html
-  Chart.values.map((value, index) => {
+  data.map((value, index) => {
     let calc = topChart - value[1] + 1;
 
     htmlBars += `<li style="grid-row: ${topChart + 1} / ${calc};
@@ -125,6 +126,6 @@ export const displayChart = () => {
   // Update the chart display DOM element
   $(".title").append(htmlTitle);
   $(".y-axis-labels").append(htmlYAxisLabels);
-  $(".chart").append(htmlChart);
+  $(`.${element}`).append(htmlChart);
   $(".x-axis-labels").append(htmlXAxisLabels);
 };

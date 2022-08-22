@@ -5,5 +5,5 @@ import Chart from "./data.js";
 $(function() {
   init();
   displayValues();
-  drawBarChart(Chart.values, Chart.options, 'chart');
+  drawBarChart(Chart.values, Chart.options, Chart.element);
 });

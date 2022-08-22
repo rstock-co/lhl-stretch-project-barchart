@@ -4,6 +4,12 @@ import Chart from "./data.js";
 
 const getMixedArrayMax = array => Math.max(...array.filter(val => typeof val === 'number'));
 
+const setCSSVariable = (variableName, variableValue) => {
+  document.documentElement.style.setProperty(
+    `${variableName}`,
+    `${variableValue}`);
+}
+
 export const displayValues = () => {
   $(".value-display .value-list").html("");
 
@@ -24,7 +30,7 @@ export const drawBarChart = (data, options, element) => {
   // reset html prior to mapping
   $(".title").html("");
   $(".y-axis-labels").html("");
-  $(".chart").html("");
+  $(`.${element}`).html("");
   $(".x-axis-labels").html("");
 
   // dynamic CSS variables
@@ -54,25 +60,14 @@ export const drawBarChart = (data, options, element) => {
   let htmlBars = "";
   let htmlChart = "";
 
-  // title
+  // TITLE
 
   htmlTitle = `<p style="font-size:${titleSize}px; color:${titleColor}; margin-top: 0; margin-bottom: 20px; padding: 0;">${title}</p>`
 
-  // set CSS variables for Y-axis
-  document.documentElement.style.setProperty(
-    "--y-axis-size",
-    `10px ${gridlineSize}px`
-  );
-  document.documentElement.style.setProperty(
-    "--y-axis-rows",
-    `repeat(${numGridlines}, 1fr)`
-  );
-  document.documentElement.style.setProperty(
-    "--y-axis-height",
-    `${Number(height) + 10}px`
-  );
-
-  // build Y-axis label set
+  // Y-AXIS
+  setCSSVariable("--y-axis-size", `10px ${gridlineSize}px`);
+  setCSSVariable("--y-axis-rows", `repeat(${numGridlines}, 1fr)`);
+  setCSSVariable("--y-axis-height", `${Number(height) + 10}px`);
 
   let YSpacing = topChart / numGridlines;
   let YLabel = 0;
@@ -81,26 +76,20 @@ export const drawBarChart = (data, options, element) => {
     YLabel += YSpacing;
   }
 
-  // build X-axis label set
+  // X-AXIS
 
   let space = spacing * 14;  // font size is 14 pixels
-  let barWidth =
-    (width - (data.length - 1) * space) / data.length;
+  let barWidth = (width - (data.length - 1) * space) / data.length;
 
-  document.documentElement.style.setProperty(
-    "--x-axis-length",
-    `${Number(width) - barWidth / 2}px`
-  );
-  document.documentElement.style.setProperty(
-    "--x-axis-labels",
-    `${(barWidth / 2) + 5}px repeat(${data.length - 1}, ${barWidth + space + 3}px)`
-  );
+  setCSSVariable("--x-axis-length", `${Number(width) - barWidth / 2}px`);
+  setCSSVariable("--x-axis-labels", `${(barWidth / 2) + 5}px repeat(${data.length - 1}, ${barWidth + space + 3}px)`);
 
   for (let i = 0; i < data.length; i++) {
     htmlXAxisLabels += `<p style="padding: 0px; margin: 1; transform: rotate(-45deg);">${data[i][0]}</p>`;
   }
 
-  // build chart bar list html
+  // BARS
+
   data.map((value, index) => {
     let calc = topChart - value[1] + 1;
 
@@ -112,6 +101,8 @@ export const drawBarChart = (data, options, element) => {
     ${value[1]}
     </li>`;
   });
+
+  // CHART
 
   htmlChart = `<ul class="chart-display" style="gap: 0 ${spacing}em;
   grid-template-rows: repeat(${topChart}, 1fr);

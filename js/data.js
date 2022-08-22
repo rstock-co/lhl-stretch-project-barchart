@@ -13,11 +13,10 @@ const Chart = {
     barSpacing: 1,                    // needs to be customizable
     numGridlines: 5,                  // needs to be either customizable or calculated based on the values themselves
     chartTitle: '2021 City Land Sales ($M)',
-    titleFontSize: 30,           // needs to set and shown dynamically, and customizable
-    titleFontColor: '#C50A1A'       // needs to set and shown dynamically, and customizableLAC 34
+    titleFontSize: 30,                // needs to set and shown dynamically, and customizable
+    titleFontColor: '#C50A1A'         // needs to set and shown dynamically, and customizableLAC 34
   },
-  element: 'element goes here',
-   // the DOM or jQuery element where the chart will be rendered into
+  element: 'chart',                 // the DOM or jQuery element where the chart will be rendered into
 }
 
 export default Chart;
